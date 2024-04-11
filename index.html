@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete website in html css and javascript in Hindi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="">
+    body{
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    header{
+        width: 100%;
+        height: 100vh;
+        background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+         url('background image.png');
+         background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    nav{
+        width:100%;
+        height:80px;
+        background: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 80px;
+    }
+    .logo{
+        font-family: sans-serif;
+        font-size: 2.5em;
+    }
+    .logo span{
+        color: #e74c3c;
+    }
+    .menu a{
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+    .menu a:first-child{
+        color: #e74c3c;
+    }
+    .menu a:hover{
+        color: #e74c3c;
+    }
+    .icon i{
+        font-size: 20px;
+    }                  
+    ">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                photo<span>pi</span>X
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+             </div>
+             <div class="icon">
+                <i class="fa fa-search" id="search"></i>
+                <a href="#">Login</a>
+             </div>
+        </nav>
+        <section class="h-text">
+            <i class="fa fa-camera" id="camera"></i>
+            <h1>Capturing the moments that captivate your heart.</h1>
+            <input type="text" name="" placeholder="Search here...">
+            <button><i class="fa fa-search"></i></button>
+             </section>
+    </header>
+
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".nature">Nature</li>
+                <li data-filter=".faishon">Faishon</li>
+                <li data-filter=".wedding">Wedding</li>
+            </ul>
+        </div>
+        <div class="portfolio-item">
+            <div class="item nature">
+                <img src="img1.jpg" width="100" height="100"> 
+            </div>
+            <div class="item faishon">
+                <img src="img2.jpg" width="100" height="100">
+            </div>
+            <div class="item wedding">
+                <img src="img3.jpg" width="100" height=100">
+             </div>
+            <div class="item nature">
+                <img src="img4.jpg" width="100" height="100">
+            </div>
+            <div class="item faishon">
+                <img src="img5.jpg" width="100" height="100">
+            </div>
+            <div class="item wedding">
+                <img src="img6.jpg" width="100" height="100">
+            </div>
+            <div class="item nature">
+                <img src="img7.jpg" width="100" height="100">
+            </div>
+            <div class="item faishon">
+                <img src="IMG_20230718_080546.jpg" width="100" height="100">
+             </div>
+             <div class="item wedding">
+                <img src="img8.jpg" width="100" height="100">
+             </div>
+        </div>
+    </section>
+
+    <section class="member">
+        <div class="member-info">
+            <h1>Our<span>Informations</span></h1>
+            <p>What our member says</p>
+        </div>
+        <div class="member-card">
+            <img src="vini.jpg" width="100">
+            <p>
+                From Bihar,doing gym is good for healthy life.it helps
+                our body to fit.it release stress from our mind. 
+            </p>
+            <h2>* Supriya</h2>
+            <img src="insta.jpg" width="50">
+            <img src="whats.jpg" width="100">
+            <img src="tele.jpg" width="100">
+        </div>
+        <div class="m-images">
+            <img src="img2.jpg" width="300" height="300">
+            <img src="img3.jpg" width="300" height="300">
+            <img src="img4.jpg" width="300" height="300">
+            <img src="img5.jpg" width="300" height="300">
+            <img src="img6.jpg" width="300" height="300">
+        </div> 
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript">
+    $('.portfolio-item').isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+$('.portfolio-menu ul li').click(function(){
+    $('.portfolio-menu ul li').removeClass('active');
+    $(this).addClass('active');
+    
+    var selector= $(this).attr('data-filter');
+    $('.portfolio-item').isotope({
+        filter:selector
+    });
+    return false;
+
+    });
+</script>
+</body> 
+</html>
